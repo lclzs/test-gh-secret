@@ -1,11 +1,9 @@
 name: This is an example
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: "Who to greet"
-        default: "World"
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   one:
