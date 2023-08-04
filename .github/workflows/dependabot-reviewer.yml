@@ -12,4 +12,5 @@ jobs:
     uses: lclzss/gh-actions/.github/workflows/dependabot-automerge.yaml@testing
     with:
       packages-minor-autoupdate: '["echo-swagger","swag","go.uber.org/zap","github.com/labstack/echo/v4","github.com/moznion/go-optional"]'
-    secrets: inherit
+    secrets:
+      envPAT: ${{ secrets.DEPENDABOT_APP }}
