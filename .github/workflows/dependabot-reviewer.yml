@@ -1,0 +1,15 @@
+name: Dependabot reviewer
+
+on: pull_request_target
+
+permissions:
+  pull-requests: write
+  contents: write
+  repository-projects: read
+
+jobs:
+  call-workflow-passing-data:
+    uses: lclzss/gh-actions/tree/main/.github/workflows/dependabot-automerger.yml
+    with:
+      packages-minor-autoupdate: '["echo-swagger","swag","go.uber.org/zap","github.com/labstack/echo/v4","github.com/moznion/go-optional"]'
+    secrets: inherit
